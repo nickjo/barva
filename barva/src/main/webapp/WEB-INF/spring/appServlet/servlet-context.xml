@@ -23,6 +23,16 @@
 	
 	<context:component-scan base-package="org.coffee.barva" />
 	
+	<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <beans:property name="url" value="jdbc:mysql://serenatte.iptime.org:7778"/>
+        <beans:property name="username" value="barva"/>
+        <beans:property name="password" value="barva"/>
+	</beans:bean>
 	
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="dataSource"></beans:property>
+		<beans:property name="configLocation" value="classpath:mybatis.xml"></beans:property>
+	</beans:bean>
 	
 </beans:beans>
