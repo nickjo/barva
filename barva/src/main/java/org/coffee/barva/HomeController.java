@@ -37,8 +37,6 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		
-		
 		//mapper selectBlog
 //		mapper.selectBlog();
 		
